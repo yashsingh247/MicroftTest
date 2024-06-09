@@ -1,0 +1,316 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title></title>
+
+    <!-- Custom fonts for this template-->
+    <link href="~/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="~/css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" rel="stylesheet" />
+    <!-- Core plugin JavaScript-->
+    <script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="~/js/sb-admin-2.min.js"></script>
+    <script src="~/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <link href="~/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <!-- Page level custom scripts -->
+    <script src="~/js/demo/datatables-demo.js"></script>
+
+
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                   aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-envelope"></i>
+                    <span>LIst</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">List</h6>
+                        <a class="collapse-item" href="~/Customer/CustomerList">CustomerList</a>
+                        <a class="collapse-item" href="~/Product/ProductList">Product List</a>
+                        <a class="collapse-item" href="~/Order/OrderList">Order LIst</a>
+                    </div>
+                </div>
+            </li>
+          
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+            <!-- Sidebar Message -->
+
+
+        </ul>
+
+        <!-- End of Sidebar -->
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+
+
+
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                   aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                 aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                               placeholder="Search for..." aria-label="Search"
+                                               aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Welcome @Session["UserName"]<br /><labe style="color:red"><span style="font-weight: bold; color: #c71c1c; margin-top: 10px !important" id='ct7'></span></labe></span>
+                                <img class="img-profile rounded-circle" src="~/img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                 aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="d-flex justify-content-center mt-12 login_container" id="DeleteMessge">
+                            @Html.Raw(@ViewBag.Alert)
+                        </div>
+                    </div>
+                   
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="card shadow mb-12">
+                                    <div class="card-header bg-gradient-primary py-3">
+                                        <h6 class="m-0 font-weight-bold text-white">@ViewBag.Title</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        @RenderBody()
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Scroll to Top Button-->
+                <!-- Logout Modal-->
+                <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                <a class="btn btn-primary" href="login.html">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+
+        $(".date").datepicker({ dateFormat: 'dd/mm/yy' });
+        $('.date').datepicker('setDate', 'today');
+            $(".ddl").select2({
+                placeholder: "Select",
+                allowClear: true,
+                theme: "classic"
+            });
+    });
+    function isNumber(evt) {
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+        return true;
+    }
+    $(".MobileNumber").on('input', function () {
+        var B =[]
+        var id = this.id;
+
+        var A = $("#" + id + "").val();
+        B = A.split(',');
+
+        for (let i = 0; i < B.length; i++)
+        {
+            var C = B[i];
+            console.log(C)
+            if (B[i].length > 9)
+            {
+
+                if (C.length == 10) {
+                    var D = /^[6-9][0-9]{9}$/.test(C)
+                    if (D == false && C.length > 9) {
+                        var Msg = "Any Number is Not In Proper Indian Format";
+                        var Message = "<div class='alert alert-danger alert-dismissible' id='alert'><button type='button' class='close' data-dismiss='alert'>×</button><strong> Error!</ strong > " + Msg + "</a>.</div>"
+                        $("#DeleteMessge").append(Message);
+                        $('#Submit').attr('disabled', 'disabled');
+                        break;
+
+                    }
+                    else {
+                        $("#DeleteMessge").empty();
+                        $('#Submit').removeAttr('disabled');
+                    }
+                    $("#DeleteMessge").empty();
+                }
+                else {
+                    var Msg = "Any Number's length is  not equals to 10";
+                    var Message = "<div class='alert alert-danger alert-dismissible' id='alert'><button type='button' class='close' data-dismiss='alert'>×</button><strong> Error!</ strong > " + Msg + "</a>.</div>"
+                    $("#DeleteMessge").append(Message);
+
+                }
+                $("#DeleteMessge").empty();
+            }
+        }
+    })
+
+    function display_ct7() {
+        var x = new Date()
+        var ampm = x.getHours() >= 12 ? ' PM' : ' AM';
+        hours = x.getHours() % 12;
+        hours = hours ? hours : 12;
+        hours = hours.toString().length == 1 ? 0 + hours.toString() : hours;
+
+        var minutes = x.getMinutes().toString()
+        minutes = minutes.length == 1 ? 0 + minutes : minutes;
+
+        var seconds = x.getSeconds().toString()
+        seconds = seconds.length == 1 ? 0 + seconds : seconds;
+
+        var month = (x.getMonth() + 1).toString();
+        month = month.length == 1 ? 0 + month : month;
+
+        var dt = x.getDate().toString();
+        dt = dt.length == 1 ? 0 + dt : dt;
+
+        var x1 = dt + "/" + month + "/" + x.getFullYear();
+        x1 = x1 + " - " + hours + ":" + minutes + ":" + seconds + " " + ampm;
+        document.getElementById('ct7').innerHTML = x1;
+        display_c7();
+    }
+    function display_c7() {
+        var refresh = 1000;
+        mytime = setTimeout('display_ct7()', refresh)
+    }
+    display_c7()
+</script>

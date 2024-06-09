@@ -1,0 +1,73 @@
+﻿@model TestIndore.Models.Customer
+
+@{
+    ViewBag.Title = "Customer";
+}
+
+@using(Html.BeginForm("AddEditCustomer", "Customer", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { onsubmit = "return SubmitForm(this)" }))
+
+{
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-1">
+                    <div class="form-group">
+                        <label>Name</label>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        @Html.HiddenFor(m => m.CustomerID)
+                        @Html.TextBoxFor(m => m.CustomerName, new { @Type = "Text", @class = "form-control", @required = "required" })
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Address</label>
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        @Html.TextAreaFor(m => m.CustomerAddress, new { @Type = "Text", @class = "form-control", @required = "required" })
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>City</label>
+
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.CustomerCity, new { @Type = "Text", @class = "form-control", @required = "required" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Pin Code</label>
+
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.CustomerPinCode, new { @Type = "Text", @class = "form-control", @required = "required", @maxlength = "6", @onkeypress = "javascript:return isNumber(event)" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-xl-12">
+            <div class="form-group" style=" text-align:center">
+                <input type="submit" id="Submit" class="btn btn-success" value="Submit" style="margin-top:1%" />
+            </div>
+        </div>
+    </div>
+}

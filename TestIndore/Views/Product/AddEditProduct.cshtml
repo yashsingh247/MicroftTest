@@ -1,0 +1,107 @@
+﻿@model TestIndore.Models.Product
+@{
+    ViewBag.Title = "Product";
+}
+@using (Html.BeginForm("AddEditProduct", "Product", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { enctype = "multipart/form-data",onsubmit = "return SubmitForm(this)" }))
+
+{
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Product Code</label>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        @Html.HiddenFor(m => m.ProductID)
+                        @Html.TextBoxFor(m => m.ProductCode, new { @Type = "Text", @class = "form-control", @required = "required" })
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Product Name</label>
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        @Html.TextBoxFor(m => m.ProductName, new { @Type = "Text", @class = "form-control", @required = "required" })
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Description</label>
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        @Html.TextAreaFor(m => m.Description, new { @Type = "Text", @class = "form-control", @required = "required" })
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="form-group">
+                        <label>Image</label>
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        @Html.TextBoxFor(m => m.File, new { @Type = "File", @class = "form-control" , @accept = "image/*"})
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Unit</label>
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        @Html.TextBoxFor(m => m.Unit, new { @Type = "Text", @class = "form-control", @required = "required" })
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="form-group">
+                        <label>Rate</label>
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        @Html.TextBoxFor(m => m.Rate, new { @Type = "Text", @class = "form-control", @required = "required" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-xl-12">
+            <div class="form-group" style=" text-align:center">
+                <input type="submit" id="Submit" class="btn btn-success" value="Submit" style="margin-top:1%" />
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+

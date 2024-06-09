@@ -1,0 +1,80 @@
+﻿@model IEnumerable<TestIndore.Models.Order>
+
+@{
+    ViewBag.Title = "Order List";
+}
+
+<style>
+    div.dataTables_wrapper {
+        width: auto;
+        margin: 0 auto;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-xl-4 col-lg-12 col-md-4">
+            <div class="form-group">
+                <a href="~/Order/AddEditOrder/0" class="btn btn-success"><span class="fa fa-plus"></span> Add New Order</a>
+            </div>
+        </div>
+    </div>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Order List</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-responsive dataTable" id="Customer" width="100%" cellspacing="0">
+                    <thead class="bg-gradient-primary" style="color:white;">
+                        <tr>
+
+                            <th>Id</th>
+                            <th>Order Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                            <th>Custmer Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                            <th>Total QTY.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                            <th>Total Amount&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                            
+                            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null)
+                        {
+
+                            foreach (var i in Model)
+                            {
+                                <tr>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => i.OrderID)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => i.OrderDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => i.CustomerName)
+
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => i.TotalQty)
+                                    </td>
+                                    <td>
+
+                                        @Html.DisplayFor(modelItem => i.TotalAmount)
+                                    </td>
+                                    
+
+
+                                    <td>
+                                        @*<a href="#"><span class="fa fa-eye"></span> </a> &nbsp;*@
+                                        <a href="~/Order/AddEditOrder/@i.OrderID"><span class="fa fa-pen-fancy"></span> </a> &nbsp;  <a href="~/Order/AddEditOrder/@i.OrderID"><span class="fa fa-trash"></span> </a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
